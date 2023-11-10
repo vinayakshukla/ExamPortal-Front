@@ -1,11 +1,14 @@
 <div class="wrapper">
+   
     <div class="container">
-        <div class="row">
+        
+        <div class="row mt-3">
             <div class="col-md-6 offset-md-3">
+                <mat-card class="p-3">
                 <div class="container">
                     <img class="text-center exam-logo m-auto " src="../../../assets/exm-logo-1.png" alt="">
                 </div>
-                <h3 class="text-center">Register Here</h3>
+                <h1 class="text-center">Register Here</h1>
                 <!-- {{ user | json}} -->
                 <form (ngSubmit)="formSubmit()">
                     <mat-form-field class="full-width" appearance="outline">
@@ -36,13 +39,14 @@
 
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Phone </mat-label>
-                        <input [(ngModel)]="user.phone" name="phone" matInput placeholder="Enter Here">
+                        <input required [(ngModel)]="user.phone" name="phone" matInput placeholder="Enter Here">
                     </mat-form-field>
                     <div class="container text-center">
                         <button type="submit" mat-raised-button color="primary">Register</button>
-                        <button class=" m-4 " mat-raised-button color="accent">Accent</button>
+                        <button class=" m-2 ml-3 mx-3" mat-raised-button color="accent">Accent</button>
                     </div>
                 </form>
+            </mat-card>
             </div>
         </div>
     </div>
