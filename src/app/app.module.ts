@@ -20,6 +20,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
+import { authInterceptorProviders } from './services/auth.interceptor';
 
 
 
@@ -52,7 +53,7 @@ import {MatCardModule} from '@angular/material/card';
     MatTooltipModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [ authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

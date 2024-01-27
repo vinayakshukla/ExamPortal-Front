@@ -7,23 +7,25 @@
                     <img class="text-center exam-logo m-auto " src="../../../assets/exm-logo-1.png" alt="">
                 </div>
                 <h1 class="text-center"> Login Here !!</h1>
-                <form action="">
+                <form (ngSubmit)="formSubmit()">
+
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Username</mat-label>
-                        <input  name="username" matInput placeholder="Enter Here">
+                        <input [(ngModel)]="loginData.username" required name="username" matInput placeholder="Enter Here">
                         <mat-hint>Valid User Name</mat-hint>
                     </mat-form-field> 
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>User Password</mat-label>
-                        <input  name="password" matInput placeholder="Enter Here">
+                        <input  [(ngModel)]="loginData.password" required  type="password" name="password" matInput placeholder="Enter Here">
                         
                     </mat-form-field>
-                    </form>
                     <div class="container text-center">
-                        <button type="submit" mat-raised-button color="primary">Register</button>
+                        <button type="submit" mat-raised-button color="primary" >Login</button>
                         <button class=" m-3"type="submit" mat-raised-button color="accent">Reset</button>
 
                     </div>  
+                    </form>
+                   
                 </mat-card>              
             </div>
         </div>
