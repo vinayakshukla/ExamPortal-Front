@@ -21,6 +21,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
 import { authInterceptorProviders } from './services/auth.interceptor';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 
 
 
@@ -37,6 +39,8 @@ import { authInterceptorProviders } from './services/auth.interceptor';
     SignupComponent,
     LoginComponent,
     HomeComponent,
+    UserDashboardComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

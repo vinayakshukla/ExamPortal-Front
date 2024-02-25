@@ -16,7 +16,7 @@ export class LoginService {
     return this.http.get(`${baseUrl}/current-user`);
   }
   // login user: set token in localStorage
-  public loginUser(token: string){
+  public  (token: string){
     localStorage.setItem('token', token);
     return true;
   }
