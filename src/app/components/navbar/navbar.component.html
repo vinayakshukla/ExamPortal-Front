@@ -1,13 +1,27 @@
 <mat-toolbar color="primary">
-    <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu_book</mat-icon>
-    </a>
-    <span>Exam Portal</span>
-    <span class="example-spacer"></span>
-    <a routerLink="/login" mat-icon-button class="example-icon favorite-icon"   matTooltip="Login" aria-label="Example icon-button with heart icon">
-      <mat-icon>login</mat-icon>
-    </a>
-    <a  routerLink="/signup" mat-icon-button class="example-icon"  matTooltip="User Registration" aria-label="Example icon-button with share icon">
-      <mat-icon>how_to_reg</mat-icon>
-    </a>
-  </mat-toolbar>
+  <a routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu_book</mat-icon>
+  </a>
+  <span>Exam Portal</span>
+  <span class="example-spacer"></span>
+  
+ <a  *ngIf="!login.isLoggedIn()" routerLink="/login" mat-icon-button class="example-icon favorite-icon" matTooltip="Login"
+    aria-label="Example icon-button with heart icon">
+    <mat-icon>login</mat-icon>
+  </a>
+  <a *ngIf="!login.isLoggedIn()" routerLink="/signup" mat-icon-button class="example-icon" matTooltip="User Registration"
+    aria-label="Example icon-button with share icon">
+    <mat-icon>how_to_reg</mat-icon>
+  </a>
+  <span *ngIf="login.isLoggedIn()" class="m-2">{{login.getUser().username}}</span>
+
+  <a  (click)="logout()" mat-icon-button class="example-icon" matTooltip="LogOut"
+  aria-label="Example icon-button with share icon">
+  
+  <mat-icon>logout</mat-icon>
+</a>
+
+
+
+ 
+</mat-toolbar>

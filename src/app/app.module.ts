@@ -22,7 +22,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
-import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 
 
 
@@ -40,7 +40,8 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
     LoginComponent,
     HomeComponent,
     UserDashboardComponent,
-    DashboardComponent,
+    AdminDashboardComponent,
+    
   ],
   imports: [
     BrowserModule,

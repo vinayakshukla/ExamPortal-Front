@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
 
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor(private snack: MatSnackBar, private login: LoginService) { };
+  constructor(private snack: MatSnackBar, private login: LoginService, private router: Router) { };
   ngOnInit(): void {
 
   }
@@ -43,6 +44,15 @@ export class LoginComponent implements OnInit {
           this.login.setUser(user);
           console.log(user);
           // pending redirect .. admin-db or normal db
+          if(this.login.getUserRole()==='ADMIN'){
+            this.router.navigate(['admin-dashboard']);
+         
+          }else if(this.login.getUserRole()==='NORMAL'){
+           this.router.navigate(['user-dashboard']);
+          }
+          else{
+            this.login.logout();
+          }
         });
 
       }
@@ -51,8 +61,9 @@ export class LoginComponent implements OnInit {
 
         console.log('Error !');
         console.log(error);
+        this.snack.open("Invalid Details !! Try again ", " ", {duration:3000});
       }
-    })
+    });
   }
 
 

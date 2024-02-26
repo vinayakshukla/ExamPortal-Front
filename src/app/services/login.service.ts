@@ -6,6 +6,8 @@ import baseUrl from './helper';
   providedIn: 'root'
 })
 export class LoginService {
+  
+
 
   constructor(private http: HttpClient) { }
 
@@ -16,7 +18,7 @@ export class LoginService {
     return this.http.get(`${baseUrl}/current-user`);
   }
   // login user: set token in localStorage
-  public  (token: string){
+  public  loginUser(token: string){
     localStorage.setItem('token', token);
     return true;
   }

@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
-import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { canActivateTeam } from './services/admin.guard';
+import { canActivateGeneral } from './services/general.guard';
 
 const routes : Routes= [
   {
@@ -23,14 +25,16 @@ const routes : Routes= [
    component: LoginComponent,
    pathMatch:'full'
   },{
-    path:'admin',
-    component: DashboardComponent,
+    path:'admin-dashboard',
+    component: AdminDashboardComponent,
     pathMatch:'full',
+    canActivate: [canActivateTeam],
   },
   {
     path:'user-dashboard',
     component: UserDashboardComponent,
     pathMatch:'full',
+    canActivate: [canActivateGeneral],
   }
 ];
 
