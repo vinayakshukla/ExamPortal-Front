@@ -43,12 +43,14 @@ export class LoginComponent implements OnInit {
         this.login.getCurrentUser().subscribe((user: any) => {
           this.login.setUser(user);
           console.log(user);
+
           // pending redirect .. admin-db or normal db
           if(this.login.getUserRole()==='ADMIN'){
             this.router.navigate(['admin-dashboard']);
-         
+            this.login.loginStatusSubject.next(true);
           }else if(this.login.getUserRole()==='NORMAL'){
            this.router.navigate(['user-dashboard']);
+           this.login.loginStatusSubject.next(true);
           }
           else{
             this.login.logout();

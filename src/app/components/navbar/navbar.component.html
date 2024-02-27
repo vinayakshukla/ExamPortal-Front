@@ -5,15 +5,15 @@
   <span>Exam Portal</span>
   <span class="example-spacer"></span>
   
- <a  *ngIf="!login.isLoggedIn()" routerLink="/login" mat-icon-button class="example-icon favorite-icon" matTooltip="Login"
+ <a  *ngIf="!isLoggedIn" routerLink="/login" mat-icon-button class="example-icon favorite-icon" matTooltip="Login"
     aria-label="Example icon-button with heart icon">
     <mat-icon>login</mat-icon>
   </a>
-  <a *ngIf="!login.isLoggedIn()" routerLink="/signup" mat-icon-button class="example-icon" matTooltip="User Registration"
+  <a *ngIf="!isLoggedIn" routerLink="/signup" mat-icon-button class="example-icon" matTooltip="User Registration"
     aria-label="Example icon-button with share icon">
     <mat-icon>how_to_reg</mat-icon>
   </a>
-  <span *ngIf="login.isLoggedIn()" class="m-2">{{login.getUser().username}}</span>
+  <span *ngIf="isLoggedIn && user && user.username!=null" class="m-2">{{user.username}}</span>
 
   <a  (click)="logout()" mat-icon-button class="example-icon" matTooltip="LogOut"
   aria-label="Example icon-button with share icon">
