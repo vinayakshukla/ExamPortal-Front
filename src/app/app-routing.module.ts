@@ -7,6 +7,8 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { canActivateTeam } from './services/admin.guard';
 import { canActivateGeneral } from './services/general.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 
 const routes : Routes= [
   {
@@ -27,7 +29,16 @@ const routes : Routes= [
   },{
     path:'admin-dashboard',
     component: AdminDashboardComponent,
-    pathMatch:'full',
+  
+    children:[
+      
+    {  path:'',
+      component: WelcomeComponent,
+    },
+    {  path:'profile',
+    component: ProfileComponent,
+  },
+    ],
     canActivate: [canActivateTeam],
   },
   {

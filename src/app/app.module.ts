@@ -23,6 +23,11 @@ import {MatCardModule} from '@angular/material/card';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import {MatListModule} from '@angular/material/list';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+
 
 
 
@@ -41,6 +46,9 @@ import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-das
     HomeComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
+    WelcomeComponent,
     
   ],
   imports: [
@@ -56,7 +64,8 @@ import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-das
     MatToolbarModule,
     MatIconModule,
     MatTooltipModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   providers: [ authInterceptorProviders],
   bootstrap: [AppComponent]
