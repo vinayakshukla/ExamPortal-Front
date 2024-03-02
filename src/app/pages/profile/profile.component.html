@@ -1,18 +1,66 @@
 <mat-card>
-    <h3>Your Profile Details</h3>
+    <!-- <h3>Your Profile Details</h3> -->
+    <!-- pending make a pipe that will handle global handling for variable undefined and show some message -->
     <mat-card-content>
         <div class="bootstrap-wrapper">
             <div class="container">
                 <div class="container text-center">
-                    <img class="profile-image responsive-image"src="../../../assets/default.png.png" alt="">
-                    <h1 class="mt20"> Vinayak Shukla</h1>
+                    <img class="profile-image responsive-image" src="../../../assets/default.png.png" alt="">
+                    <h1 class="mt20"> {{user.firstName}} {{user.lastName}}</h1>
                 </div>
                 <div class="row">
                     <div class="col-md-10 offset-md-1">
-
+                        <table class="table text-center">
+                            <tr>
+                                <td>
+                                    Username
+                                </td>
+                                <td>
+                                   {{user.username}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    UserId
+                                </td>
+                                <td>
+                                    {{user.id}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Phone
+                                </td>
+                                <td>
+                                    {{user.phone}} 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Role
+                                </td>
+                                <td>
+                                    {{user.authorities[0].authority}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   Status 
+                                </td>
+                                <td>
+                                    {{user.enabled? 'Active': 'Not-Active'}}
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+        
     </mat-card-content>
+    <mat-card-actions class="d-block text-center">
+        <button class="m-2"mat-raised-button color="primary">UPDATE</button>
+        <!-- pending add code when user click on update -->
+        <button class="m-2"mat-raised-button color="accent">SHARE</button>
+      </mat-card-actions>
 </mat-card>

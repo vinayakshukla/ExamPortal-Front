@@ -13,7 +13,9 @@
     aria-label="Example icon-button with share icon">
     <mat-icon>how_to_reg</mat-icon>
   </a>
+  <button mat-button routerLink="/admin-dashboard/profile">
   <span *ngIf="isLoggedIn && user && user.username!=null" class="m-2">{{user.username}}</span>
+</button>
 
   <a  (click)="logout()" mat-icon-button class="example-icon" matTooltip="LogOut"
   aria-label="Example icon-button with share icon">
