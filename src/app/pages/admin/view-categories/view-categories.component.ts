@@ -12,16 +12,21 @@ export class ViewCategoriesComponent {
     cid:1,
     title: "Programming",
     description: "this is testing"
+  },
+  {
+    cid:1,
+    title: "Aptitude",
+    description: "This is aptitude test"
   }];
  constructor(private _category: CategoryService){}
-//  ngOnInit():void{
-//      this._category.categories().subscribe({next:(data:any)=>{
-//       this.categories=data;
-//       console.log(this.categories);
-//      },
-//      error:(error)=>{
-//       Swal.fire('Error !!', 'Error in loading data', 'error');
-//      }}
-//      );
-//  }
+ ngOnInit():void{
+     this._category.categories().subscribe({next:(data:any)=>{
+      this.categories=data;
+      console.log(this.categories);
+     },
+     error:(error)=>{
+      Swal.fire('Error !!', 'Error in loading data', 'error');
+     }}
+     );
+ }
 }

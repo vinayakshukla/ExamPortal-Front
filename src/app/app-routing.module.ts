@@ -10,6 +10,7 @@ import { canActivateGeneral } from './services/general.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 
 const routes : Routes= [
   {
@@ -41,6 +42,10 @@ const routes : Routes= [
   },
   {  path:'categories',
     component: ViewCategoriesComponent,
+  },
+  {
+    path:'add-categories',
+    component: AddCategoryComponent,
   },
     ],
     canActivate: [canActivateTeam],

@@ -29,6 +29,8 @@ import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 
 
@@ -69,7 +71,8 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
     MatIconModule,
     MatTooltipModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatDividerModule
   ],
   providers: [ authInterceptorProviders],
   bootstrap: [AppComponent]

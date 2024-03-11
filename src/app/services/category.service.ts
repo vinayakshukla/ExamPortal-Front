@@ -12,4 +12,7 @@ export class CategoryService {
     public categories(){
       return this._http.get(`${baseUrl}/category/`);
     }
+    public addCategory(category:{}){
+      return this._http.post(`${baseUrl}/category/`, category);
+    }
 }
