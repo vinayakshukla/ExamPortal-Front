@@ -32,14 +32,8 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
 import {MatDividerModule} from '@angular/material/divider';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
-
-
-
-
-
-
-
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -76,7 +70,9 @@ import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
     MatTooltipModule,
     MatCardModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSlideToggleModule,
+    MatSelectModule
   ],
   providers: [ authInterceptorProviders],
   bootstrap: [AppComponent]
