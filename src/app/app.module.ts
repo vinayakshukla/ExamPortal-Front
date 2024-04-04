@@ -34,6 +34,7 @@ import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.co
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -72,7 +73,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatListModule,
     MatDividerModule,
     MatSlideToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    
+    ReactiveFormsModule
   ],
   providers: [ authInterceptorProviders],
   bootstrap: [AppComponent]

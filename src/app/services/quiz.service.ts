@@ -10,5 +10,8 @@ export class QuizService {
   constructor(private _http: HttpClient) { }
   public quizzes(){
     return this._http.get(`${baseUrl}/quiz/`);
+  }
+  public addQuiz(data:any){
+    return this._http.post(`{baseUrl}/quiz/`,data);
   } 
 }
