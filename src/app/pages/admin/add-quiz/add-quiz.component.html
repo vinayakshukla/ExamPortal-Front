@@ -1,6 +1,9 @@
 <mat-card class="p-3">
   <h1 class="m-2">Add New Quiz</h1>
   <div class="container">
+    <div>
+      {{quizData |json}}
+    </div>
     <div class="row">
       <div class="col-md-8 offset-md-1">
         <form (ngSubmit)="addQuiz()">
@@ -26,7 +29,7 @@
             <div class="col-md-6">
               <mat-form-field class="w100">
                 <mat-label>Number of Questions</mat-label>
-                <input [(ngModel)]="quizData.numberOfQuestion" [ngModelOptions]="{standalone: true}" type="text" name="maxMarks" placeholder="Enter here " matInput>
+                <input [(ngModel)]="quizData.numberOfQuestions" [ngModelOptions]="{standalone: true}" type="text" name="maxMarks" placeholder="Enter here " matInput>
 
               </mat-form-field>
             </div>

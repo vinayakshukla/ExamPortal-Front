@@ -13,9 +13,10 @@
         <mat-card-actions>
             <button class="m-1" mat-flat-button color="primary">Questions </button>
             <button class="m-1" mat-stroked-button color="primary">Max-Marks {{quiz.maxMarks}} </button>
-            <button class="m-1" mat-stroked-button color="primary">Questions {{quiz.numberOfQuestions}} </button>
+            <button class="m-1" mat-stroked-button color="primary">Total Questions: {{quiz.numberOfQuestions}} </button>
             <button class="m-1" mat-flat-button color="primary">Update </button>
             <button class="m-1" mat-flat-button color="primary">Attempts </button>
+            <button class="m-1"  mat-flat-button color="warn" (click)="deleteQuiz(quiz.qId)">Delete </button>
         </mat-card-actions>
     </mat-card-content>
 </mat-card>

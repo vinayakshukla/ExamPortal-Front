@@ -26,7 +26,7 @@ export class AddQuizComponent {
     title: '',
     description: '',
     maxMarks: '',
-    numberOfQuestion: '',
+    numberOfQuestions: '',
     active: true,
     category: {
       cid: ''
@@ -48,7 +48,7 @@ export class AddQuizComponent {
   }
 
   addQuiz() {
-    if (!this.quizData.title || this.quizData.title !== "" || !this.quizData.description || !this.quizData.maxMarks || !this.quizData.numberOfQuestion) {
+    if (!this.quizData.title || this.quizData.title === "" || !this.quizData.description || !this.quizData.maxMarks || !this.quizData.numberOfQuestions) {
       this._snak.open("Title Required!!", "", { duration: 3000 });
       return;
     }
@@ -59,7 +59,7 @@ export class AddQuizComponent {
           title: '',
           description: '',
           maxMarks: '',
-          numberOfQuestion: '',
+          numberOfQuestions: '',
           active: true,
           category: {
             cid: ''
